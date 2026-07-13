@@ -1,4 +1,4 @@
-// 1. First approach has time complexity of O(m*n)
+// 1. First approach has time complexity of O(m*n) - Pure Brute Force Approach 
 function arrayNonZeroSumProduct(nums) {
     let count = 0;
 

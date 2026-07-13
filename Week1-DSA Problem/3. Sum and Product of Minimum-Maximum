@@ -3,6 +3,11 @@
 function MinMax(nums){
     let max = -Infinity;
     let min = Infinity;
+
+  if (!nums || nums.length === 0) {
+        return null;
+    }
+
     for(let i=0; i<nums.length; i++){
         if(nums[i] > max){
             max = nums[i];

@@ -1,1 +1,39 @@
+// 1. First approach has time complexity of O(m*n)
+function arrayNonZeroSumProduct(nums) {
+    let count = 0;
+
+    while (true) {
+        let hasNonZero = false; //Means 0 is there
+
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] > 0) {
+                nums[i] = nums[i] - 1;
+                hasNonZero = true; //Means 0 is not there
+            }
+        }
+        if (!hasNonZero) {
+            break;
+        }
+        count++;
+    }
+
+    return count;
+}
+
+console.log(arrayNonZeroSumProduct([10,100,2])); //Output - 100
+
+
+//Approach 2 - Find the max element directly from it. Time complexity - O(n)
+function arrayNonZeroSumProduct(arr) {
+    let max = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+console.log(arrayNonZeroSumProduct([10,100,2])); //Output - 100
 

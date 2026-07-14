@@ -37,6 +37,29 @@ return -1
 }
 console.log(subArray([15, 2, 4, 10], 6))
 
-//Approach 3 - Prefix Sum + HashMap - Time complexity - O(n) - Space complexity - O(1)
+
+//Approach 3 - Prefix Sum + HashMap - Time complexity - O(n) - Space complexity - O(n)
+function subArraySum(arr, target) {
+    let map = new Map();
+
+    let prefixSum = 0;
+
+    // Important
+    map.set(0, -1);
+
+    for (let i = 0; i < arr.length; i++) {
+        prefixSum += arr[i];
+
+        if (map.has(prefixSum - target)) {
+            return [map.get(prefixSum - target) + 1, i];
+        }
+
+        map.set(prefixSum, i);
+    }
+
+    return -1;
+}
+
+console.log(subArraySum([10, 2, -2, -20, 10], -10));
 
 

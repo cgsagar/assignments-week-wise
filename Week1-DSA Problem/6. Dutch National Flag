@@ -1,1 +1,8 @@
+//Approach 1 - Time complexity - O(n logn)
 
+function DutchProblem(arr){
+    const arrProb = arr.sort((a, b)=>a-b);
+    return arrProb;
+}
+
+console.log(DutchProblem([0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1])) //Output is sorted

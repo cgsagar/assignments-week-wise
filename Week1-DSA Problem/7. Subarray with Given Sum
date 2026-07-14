@@ -1,1 +1,42 @@
 
+//Approach 1: Brute force - Time complexity - O(n2) - Space complexity - O(1)
+
+function subArray(arr, target){
+    for(let i=0; i<arr.length; i++){
+        let sum=0;
+        for(let j=i; j<arr.length; j++){
+            sum = sum+arr[j];
+            if(sum === target){
+                return[i,j];
+            }
+        }
+    }
+    return -1
+}
+console.log(subArray([15, 2, 4, 8, 9, 5, 10, 23], 23))
+
+//Approach 2: Sliding Window Approach - Time complexity - O(n) - Space complexity - O(1) But this approach will not work for negative 
+numbers. so we have to use the approach 3
+
+function subArray(arr, target){
+    let left = 0;
+    let sum = 0;
+   for (let right = 0; right < arr.length; right++) {
+    sum += arr[right];
+
+    while (sum > target) {
+        sum -= arr[left];
+        left++;
+    }
+
+    if (sum === target) {
+        return [left, right];
+    }
+}
+return -1
+}
+console.log(subArray([15, 2, 4, 10], 6))
+
+//Approach 3 - Prefix Sum + HashMap - Time complexity - O(n) - Space complexity - O(1)
+
+

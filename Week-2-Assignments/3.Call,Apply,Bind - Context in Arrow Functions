@@ -1,1 +1,27 @@
 
+Question: What will be the output? Can the context of greet be changed using .call()? Why or why not?
+
+const profile = {
+  userName: 'Vasanth',
+  greet: () => {
+    console.log(`Hi, I'm ${this.userName}`);
+  },
+  welcome: function() {
+    console.log(`Welcome, ${this.userName}`);
+  }
+};
+
+const friend = { userName: 'Candidate' };
+
+profile.greet.call(friend); 
+profile.welcome.call(friend);
+
+Output:
+Hi, I'm undefined
+Welcome, I'm Candidate
+
+Ans: Context of greet cannot be changed because Arrow functions ignore call, Bind and apply. The this value is permanently 
+taken from the surrounding lexical scope when the arrow function is created. Arrow functions do not have their own this. Only 
+for the regular functions call, bind and arrow will work.
+
+

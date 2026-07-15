@@ -1,1 +1,26 @@
-Implement a polyfill for Array.prototype.flat(). Your implementation must handle the depth argument correctly.
+//Implement a polyfill for Array.prototype.flat(). Your implementation must handle the depth argument correctly.
+//Flat By flat() will open up only one level
+1. //Recursive Approach 
+Array.prototype.myFlat = function(depth = 1){
+    const output = [];
+    function flattenArray(arr, currentDepth){
+    for(let i=0; i<arr.length; i++){
+        if(Array.isArray(arr[i]) && currentDepth > 0){
+            flattenArray(arr[i], currentDepth === Infinity ? Infinity : currentDepth - 1);
+        }
+        else {
+            output.push(arr[i])
+        }
+    }
+    return output;
+}
+const result = flattenArray(this, depth);
+return result;
+}
+const inputArray = [0,1,2,[3,4,[5,6]],7];
+console.log(inputArray.myFlat(1));
+
+
+2. //Iterative Approach
+
+

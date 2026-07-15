@@ -33,3 +33,25 @@ function twoSum(arr, target) {
 }
 
 console.log(twoSum([1, 5, 7, -1, 5], 6));
+
+
+//Reference in Future for two sum with any one first pair - Time complexity is O(n)
+
+function twoSum(nums, target) {
+    const map = new Map();
+
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i];
+
+        if (map.has(complement)) {
+            return [map.get(complement), i];
+        }
+
+        map.set(nums[i], i);
+    }
+}
+
+console.log(twoSum([7,2,12,16], 14));
+
+
+

@@ -12,3 +12,24 @@ function twoSum(arr, target){
 }
 
 console.log(twoSum([1, 5, 7, -1, 5], 6));
+
+
+//Approach 2 - HashMap (Map in JavaScript) - Time complexity is O(n)
+function twoSum(arr, target) {
+    let map = new Map();
+    let count = 0;
+
+    for (let num of arr) {
+        let complement = target - num;
+
+        if (map.has(complement)) {
+            count += map.get(complement);
+        }
+
+        map.set(num, (map.get(num) || 0) + 1);
+    }
+
+    return count;
+}
+
+console.log(twoSum([1, 5, 7, -1, 5], 6));

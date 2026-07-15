@@ -28,4 +28,12 @@ console.log('6 - Sync End');
 2 - Macrotask
 
 
+Explain why the asyncFn behaves differently than a standard promise chain.
 
+The behavior is not fundamentally different from a promise chain except the syntax and rest all stays the same.
+async/await does not create a new scheduling mechanism. Under the hood, await uses promises and microtasks.
+
+async/await doesn't behave differently from promises at the event-loop level. 
+await is syntactic sugar over promise chaining. 
+When execution reaches await, the async function is paused and the remaining code is scheduled as a microtask, 
+similar to a .then() callback.

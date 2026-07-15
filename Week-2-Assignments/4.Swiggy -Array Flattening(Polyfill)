@@ -49,7 +49,7 @@ Array.prototype.myFlatIterative = function(depth = 1) {
 
     return result;
 };
-``
+
 const arrI = [1,2,3,[7,8,[9,[10]]]]
 console.log(arrI.myFlatIterative(1))
 

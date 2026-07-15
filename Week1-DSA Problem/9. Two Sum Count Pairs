@@ -1,4 +1,4 @@
-//Approach 1 - Time complexity is O(n²)
+//Approach 1 - Time complexity is O(n²) and Space complexity is O(1)
 function twoSum(arr, target){
     let count = 0;
     for(let i=0; i<arr.length; i++){

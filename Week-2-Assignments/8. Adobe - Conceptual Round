@@ -1,1 +1,18 @@
+Question: What will be logged? How do you fix this using the spread operator while keeping the code readable?
 
+const state = {
+  user: { id: 101, details: { city: 'Bangalore' } },
+  theme: 'dark'
+};
+
+const newState = {...state };
+newState.user.details.city = 'Chennai';
+
+console.log(state.user.details.city); 
+// Expected output? Why did it change?
+Interviewer Logic: Demonstrates that the spread operator is a Shallow Copy. 
+If you change a nested object, the original is mutated because the reference was shared.
+
+
+Ans: It creates Shallow copy so both state and newState is same only i.e Chennai - Both point to same Object
+In order to fix this We need to make sure to Deep copy at each level

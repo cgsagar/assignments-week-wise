@@ -1,5 +1,5 @@
 
-//Approach 1: Brute force - Time complexity - O(n2) - Space complexity - O(1)
+//Approach 1: Brute force - Time complexity - O(n²) - Space complexity - O(1)
 
 function subArray(arr, target){
     for(let i=0; i<arr.length; i++){

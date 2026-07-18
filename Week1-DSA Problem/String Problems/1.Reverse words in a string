@@ -1,4 +1,4 @@
-//Approach - 1
+//Approach - 1 - Time and Space complexity is O(n) 
 function reverseWords(s) {
     // Split by dots, remove empty strings, reverse, and join
     return s
@@ -11,4 +11,6 @@ function reverseWords(s) {
 // Example Usage
 console.log(reverseWords("i.like.this.program.very.much"));
 // Output: "much.very.program.this.like.i"
+
+//Approach - 2
 

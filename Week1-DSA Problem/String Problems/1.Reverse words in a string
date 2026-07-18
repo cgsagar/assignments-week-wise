@@ -1,1 +1,14 @@
+//Approach - 1
+function reverseWords(s) {
+    // Split by dots, remove empty strings, reverse, and join
+    return s
+        .split(".")
+        .filter(word => word.length > 0)
+        .reverse()
+        .join(".");
+}
+
+// Example Usage
+console.log(reverseWords("i.like.this.program.very.much"));
+// Output: "much.very.program.this.like.i"
 

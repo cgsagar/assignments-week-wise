@@ -1,16 +1,26 @@
 //Approach - 1 - Time and Space complexity is O(n) 
-function reverseWords(s) {
-    // Split by dots, remove empty strings, reverse, and join
-    return s
+function reverseWords(str) {
+    return str
         .split(".")
         .filter(word => word.length > 0)
         .reverse()
         .join(".");
 }
 
-// Example Usage
 console.log(reverseWords("i.like.this.program.very.much"));
 // Output: "much.very.program.this.like.i"
 
 //Approach - 2
+function reverseWords(str) {
+ let splitStr = str.split('.');
+ const result = [];
+ for(let i=splitStr.length; i>=0; i--){
+     if(splitStr[i]){
+          result.push(splitStr[i]);
+     }
+ }
+ return result.join('.');
+}
+
+console.log(reverseWords("..geeks..for.geeks."));
 

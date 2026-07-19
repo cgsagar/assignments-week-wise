@@ -22,3 +22,21 @@ function panagram(str){
 
 console.log(panagram("aa")); //Returns false
 console.log(panagram("The quick brown fox jumps over the lazy dog")); //Return True
+
+
+//Approach 2 - Time complexity is O(n) and Space Complexity is O(1)
+
+function panagram(str){
+  const set = new Set();
+
+    for (const ch of str.toLowerCase()) {
+        if (ch >= 'a' && ch <= 'z') {
+            set.add(ch);
+        }
+    }
+
+    return set.size === 26;
+ 
+}
+
+console.log(panagram("The quick brown fox jumps over the dog")); //False

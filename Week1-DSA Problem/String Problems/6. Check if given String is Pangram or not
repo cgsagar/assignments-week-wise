@@ -1,1 +1,24 @@
+//Approach 1 - Time complexity is O(n) and Space Complexity is O(1) - Brute Force Approach
 
+function panagram(str){
+  const s = str.toLowerCase();
+  const start = 'a'.charCodeAt(0);
+  const end = 'z'.charCodeAt(0);
+  
+  for(let code =start; code <=end; code ++){
+      const ch = String.fromCharCode(code);
+      
+      let found = false;
+      for(let i=0; i<s.length; i++) {
+          if(s[i] === ch){
+              found = true;
+              break;
+          }
+      }
+     if(!found) return false;
+  }
+    return true; 
+}
+
+console.log(panagram("aa")); //Returns false
+console.log(panagram("The quick brown fox jumps over the lazy dog")); //Return True

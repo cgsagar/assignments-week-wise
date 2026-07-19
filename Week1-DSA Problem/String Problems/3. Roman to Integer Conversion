@@ -1,2 +1,26 @@
-//Approach 1 
+//Approach 1 - Time complexity is O(n) correct and Space complexity is O(1)
+function romanToInteger(roman){
+    const map = {
+        I:1,
+        V:5,
+        X:10,
+        L:50,
+        C:100,
+        D:500,
+        M:1000
+    };
+     let ans = 0;
+     for(let i=0; i<roman.length; i++){
+    const cur = map[roman[i]];
+    const next = map[roman[i + 1]]; 
+         if(cur < next){
+             ans = ans-map[roman[i]];
+         }
+         else {
+             ans = ans+map[roman[i]];
+         }
+     }
+     return ans;
+}
 
+console.log(romanToInteger("VI"))

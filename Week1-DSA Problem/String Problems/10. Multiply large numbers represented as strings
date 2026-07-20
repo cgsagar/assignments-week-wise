@@ -1,1 +1,43 @@
+//Approach - 1 - Time complexity O(m*n) and Space complexity is O(m+n)
 
+// Multiplies two non-negative integer strings and returns the product as a string.
+function multiply(num1, num2) {
+  // Handle zero early
+  if (num1 === "0" || num2 === "0") return "0";
+
+  const m = num1.length;
+  const n = num2.length;
+  const result = new Array(m + n).fill(0);
+
+  // Schoolbook multiplication from right to left
+  for (let i = m - 1; i >= 0; i--) {
+    const d1 = num1.charCodeAt(i) - 48; // '0' is 48
+    for (let j = n - 1; j >= 0; j--) {
+      const d2 = num2.charCodeAt(j) - 48;
+
+      const p2 = i + j + 1; // lower position
+      const p1 = i + j;     // carry position
+
+      const sum = d1 * d2 + result[p2];
+
+      result[p2] = sum % 10;          // current digit
+      result[p1] += Math.floor(sum / 10); // carry
+    }
+  }
+
+  // Build the output string, skipping leading zeros
+  let ans = "";
+  for (const digit of result) {
+    if (!(ans === "" && digit === 0)) {
+      ans += digit;
+    }
+  }
+
+  // If everything was zero, return "0"
+  return ans || "0";
+}
+
+// Example usage:
+console.log(multiply("123", "45"));          // "5535"
+console.log(multiply("123456789", "987654321")); // "121932631112635269"
+console.log(multiply("00012", "0034"));

@@ -9,7 +9,16 @@ Classical inheritance centers on classes and instances.
 Prototypal inheritance centers on objects and delegation.
 In JavaScript, property lookup walks up the prototype chain when a property is not found on the object itself.
 
+If asked:
 
+Can we use Array.prototype instead of class CustomArray extends Array?
+
+You can say:
+
+"Yes, we can add methods directly to Array.prototype, but that modifies the global Array object and affects every array in the application. This can lead to naming conflicts and unintended side effects. Using class CustomArray extends Array is generally safer because the additional behavior is limited to instances of the custom class."
+
+  
+  
 Ans: Extending Array means adding additional behavior or methods to the existing Array functionality, either through Array.prototype or by creating a custom class using class MyArray extends Array.
   
 Create my own Array class that has all Array features plus my custom methods. So my object has getFirst and getLast methods

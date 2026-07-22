@@ -1,3 +1,9 @@
 
 Explain the reconciliation process. How do React.memo and useCallback help maintain referential equality across renders?
 
+Ans: Reconciliation is React's diffing process where it compares the previous Virtual DOM with the new Virtual DOM and updates only the necessary parts of the real DOM.
+ It compares the new render output with the old one, applies heuristics to match elements, and then commits the resulting changes to the DOM.
+
+What React compares
+React doesn’t diff the browser DOM directly; it compares two trees of React elements produced by your components. During an update, React re-runs the affected components, 
+gets a new element tree, and checks it against the previous tree to determine what stayed the same, what changed, and what should be removed or added.

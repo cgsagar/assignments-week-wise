@@ -2,4 +2,7 @@
 The interviewer wants to know why React Fiber was introduced and how it differs from the old Stack Reconciler.
 Compare the internal implementation of the Stack Reconciler with the Fiber Reconciler. How does the Fiber “unit of work” enable interruptible rendering?
 
-Ans: The Stack Reconciler used recursive synchronous traversal based on the JavaScript call stack. Once rendering started, it couldn't be paused, reprioritized, or resumed. Fiber replaced this model with a linked tree of fiber nodes where each node represents a unit of work. React processes these units incrementally and can yield control back to the browser between them. Because progress is stored in fibers rather than the call stack, React can pause, resume, abort, or prioritize rendering work, enabling interruptible rendering and modern concurrent features. [dev.to], [devdispatc...bhalla.dev], [velotio.com]
+Ans: The Stack Reconciler used recursive synchronous traversal based on the JavaScript call stack. Once rendering started, 
+it couldn't be paused, reprioritized, or resumed. Fiber replaced this model with a linked tree of fiber nodes where each node represents a unit of work. 
+React processes these units incrementally and can yield control back to the browser between them. Because progress is stored in fibers rather than the call stack, 
+React can pause, resume, abort, or prioritize rendering work, enabling interruptible rendering and modern concurrent features.

@@ -28,3 +28,6 @@ Second  Render
 <h1>Hello React</h1>
 
 Now react compares Hello with Hello React so react updated only text node instead of recreating whole Dom element
+
+2. How do React.memo and useCallback help maintain referential equality across renders?
+Ans: 

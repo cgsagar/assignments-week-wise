@@ -104,7 +104,7 @@ const handleClick = useCallback(() => {
 }, []); ->This wont rerender so no new reference would be created. So same reference
 
 
-The below stops rerendering of the function and avoiding referential equality across renders
+The below stops rerendering of the function, component and avoiding referential equality across renders
 
 import React, { useState, useCallback } from "react";
 

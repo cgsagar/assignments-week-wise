@@ -1,1 +1,25 @@
+//Approach I took code from microsoft pilot and added here and understood the code
+function debounce(func, wait, immediate = false) {
+    let timeout;
 
+    return function (...args) {
+        const context = this;
+
+        // Cancel previous timer
+        clearTimeout(timeout);
+
+        // Execute immediately if immediate=true
+        if (immediate && !timeout) {
+            func.apply(context, args);
+        }
+
+        timeout = setTimeout(() => {
+            timeout = null;
+
+            // Normal debounce execution
+            if (!immediate) {
+                func.apply(context, args);
+            }
+        }, wait);
+    };
+}

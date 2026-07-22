@@ -1,1 +1,3 @@
 
+Explain the reconciliation process. How do React.memo and useCallback help maintain referential equality across renders?
+

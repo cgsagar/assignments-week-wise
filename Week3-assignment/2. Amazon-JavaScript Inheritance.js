@@ -2,6 +2,7 @@ What is the difference between classical and prototypal inheritance? Explain how
 
 Classical inheritance is class-based: you define a class as a blueprint, then create instances from it, and subclasses inherit from parent classes. 
 Prototypal inheritance is object-based: one object directly delegates to another object through the prototype
+JavaScript's class syntax is syntactic sugar over its underlying prototypal inheritance model.
 
 Main difference
 Classical inheritance centers on classes and instances.

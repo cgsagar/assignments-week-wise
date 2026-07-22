@@ -1,1 +1,3 @@
 
+The interviewer wants to know why React Fiber was introduced and how it differs from the old Stack Reconciler.
+Compare the internal implementation of the Stack Reconciler with the Fiber Reconciler. How does the Fiber “unit of work” enable interruptible rendering?

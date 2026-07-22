@@ -18,7 +18,7 @@
          */
         async function promiseAllWithConcurrencyLimit(tasks, limit) {
 
-            const results = [];
+            const results = new Array(tasks.length);
             let nextIndex = 0;
 
             async function worker() {

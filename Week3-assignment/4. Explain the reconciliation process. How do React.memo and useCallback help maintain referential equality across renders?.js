@@ -37,7 +37,14 @@ Now react compares Hello with Hello React so react updated only text node instea
 
 
 2. How do React.memo and useCallback help maintain referential equality across renders?
-Ans: React.memo memoizes a component and performs a shallow comparison of its props. If the current props are referentially equal to the previous props, 
+Ans: 
+ React.memo memoizes a functional component and prevents it from re-rendering if its props are shallowly equal to the previous render. 
+ However, functions are objects in JavaScript, so a new function created during every parent render has a new reference. 
+ Since React.memo compares references, it treats that prop as changed and re-renders the child. 
+ useCallback solves this by memoizing the function and returning the same function reference until its dependencies change. 
+ Together, React.memo and useCallback maintain referential equality for function props, helping avoid unnecessary child re-renders.
+ 
+ React.memo memoizes a component and performs a shallow comparison of its props. If the current props are referentially equal to the previous props, 
 React skips re-rendering the component.
 useCallback memoizes a function and returns the same function reference across renders until one of its dependencies changes.
 

@@ -37,4 +37,7 @@ Now react compares Hello with Hello React so react updated only text node instea
 
 
 2. How do React.memo and useCallback help maintain referential equality across renders?
-Ans: 
+Ans: useCallback memoizes a function reference, while useMemo memoizes the result of a computation (objects, arrays, derived values, etc.). 
+We use useCallback to maintain referential equality for callbacks passed to child components, and useMemo to avoid recreating expensive values or objects on every render. 
+Both help reduce unnecessary re-renders when used with React.memo.
+

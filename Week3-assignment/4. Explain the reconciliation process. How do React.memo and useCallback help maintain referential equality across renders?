@@ -7,3 +7,6 @@ Ans: Reconciliation is React's diffing process where it compares the previous Vi
 What React compares
 React doesn’t diff the browser DOM directly; it compares two trees of React elements produced by your components. During an update, React re-runs the affected components, 
 gets a new element tree, and checks it against the previous tree to determine what stayed the same, what changed, and what should be removed or added.
+Reconciliation happens during the render phase, where React computes the changes. After that, the commit phase applies those changes to the actual DOM in one synchronous step, 
+which is why the UI update is consistentonce it is visible. Since React 16, this render work is built on Fiber, which lets React pause, resume, and prioritize the work 
+before committing it

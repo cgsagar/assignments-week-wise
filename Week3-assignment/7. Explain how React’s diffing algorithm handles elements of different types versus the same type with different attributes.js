@@ -81,4 +81,7 @@ Create a new UserProfile (key="2")
 Pass name="Bob"
 Run mount lifecycle/hooks again
 
+So final answer is 
+ if only name changes and the key stays the same, React only updates the prop. But if the key changes, React completely unmounts the old component and mounts a new one.
+
 

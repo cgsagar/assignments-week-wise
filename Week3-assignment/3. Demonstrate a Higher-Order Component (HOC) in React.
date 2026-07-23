@@ -1,2 +1,95 @@
 
 A Higher-Order Component (HOC) is a function that takes a component as input and returns a new component with additional functionality.
+const EnhancedComponent = higherOrderComponent(WrappedComponent);
+Component
+    ↓
+HOC
+    ↓
+Enhanced Component
+
+Example: Suppose you want to add a loading message to multiple components.
+
+HOC: 
+import React from "react";
+
+function withLoading(WrappedComponent) {
+  return function EnhancedComponent({ isLoading, ...props }) {
+
+    if (isLoading) {
+      return <h2>Loading...</h2>;
+    }
+
+    return <WrappedComponent {...props} />;
+  };
+}
+
+
+Original Component
+function UserList({ users }) {
+  return (
+    <ul>
+      {users.map(user => (
+        <li key={user}>{user}</li>
+      ))}
+    </ul>
+  );
+}
+
+
+Create Enhanced Component
+const UserListWithLoading = withLoading(UserList);
+
+
+Usage:
+function App() {
+  return (
+    <UserListWithLoading
+      isLoading={false}
+      users={["John", "Mike", "Sam"]}
+    />
+  );
+}
+
+<UserListWithLoading
+  isLoading={true}
+  users={["John", "Mike", "Sam"]}
+/>
+
+Here the output is always Loading..... because it is true
+
+
+Standard function to remember
+
+function HOC(Component) {
+   return function NewComponent(props) {
+      return <Component {...props} />;
+   };
+}
+
+
+For Interview Ready answer:
+
+Example: withAuthorization
+
+Normal Component: 
+function AdminDashboard() {
+  return <h2>Admin Dashboard</h2>;
+}
+
+HOC
+
+function withAuthorization(WrappedComponent){
+	return function EnhancedComponent(props){
+		const isAdmin = true;
+		
+		 if (!isAdmin) {
+          return <h2>Access Denied</h2>;
+        }
+	
+		return <WrappedComponent {...props} />
+	};
+}
+
+
+const protectedDashboard = withAuthorization(AdminDashboard);
+

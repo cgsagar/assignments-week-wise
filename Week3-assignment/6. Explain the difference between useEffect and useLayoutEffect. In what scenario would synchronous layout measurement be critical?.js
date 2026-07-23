@@ -10,3 +10,13 @@ Simple difference
 useEffect: runs later, after paint, so it won’t delay what the user sees.
 
 useLayoutEffect: runs sooner, after DOM changes but before paint, so it can measure layout and update it without flicker.
+
+
+
+When layout measurement matters
+Synchronous layout measurement is critical when you need the exact size or position of an element before the user sees the page change. 
+For example, measuring an element’s height to place a tooltip, dropdown, or popup correctly, or adjusting something before it would visibly jump.
+Easy rule
+If you don’t need to measure the DOM right away, use useEffect. If you must measure or adjust layout immediately to avoid flicker or incorrect positioning, 
+use useLayoutEffect.
+

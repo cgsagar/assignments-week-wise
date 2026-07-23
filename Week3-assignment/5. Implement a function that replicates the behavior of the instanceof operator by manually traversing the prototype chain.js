@@ -11,7 +11,7 @@ function myInstanceOf(obj, constructorFn) {
       return true;
     }
 
-    proto = Object.getPrototypeOf(proto);
+    proto = Object.getPrototypeOf(proto); //which internally becomes proto = Object.getPrototypeOf(Person.prototype); and now it is proto = Object.prototype
   }
 
   return false;
@@ -31,5 +31,25 @@ console.log(myInstanceOf(p, Array));  // false
 The instanceof operator checks whether a constructor's prototype object exists anywhere in an object's prototype chain. 
   To replicate it, we start from the object's prototype using Object.getPrototypeOf(), traverse upward through the prototype chain, and 
   compare each prototype with constructorFn.prototype. If a match is found, return true; if the chain reaches null, return false.
+
+  Start from object's prototype
+       ↓
+Does it match Constructor.prototype?
+       ↓
+No
+       ↓
+Move up one level
+       ↓
+Does it match?
+       ↓
+No
+       ↓
+Move up again
+       ↓
+...
+       ↓
+Reached null?
+       ↓
+Yes → return false
 
 

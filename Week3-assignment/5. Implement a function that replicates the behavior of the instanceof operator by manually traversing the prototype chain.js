@@ -11,7 +11,7 @@ function myInstanceOf(obj, constructorFn) {
       return true;
     }
 
-    proto = Object.getPrototypeOf(proto); //which internally becomes proto = Object.getPrototypeOf(Person.prototype); and now it is proto = Object.prototype
+    proto = Object.getPrototypeOf(proto); //not internally becomes proto = Object.getPrototypeOf(Person.prototype); and now it is proto = Object.prototype
   }
 
   return false;

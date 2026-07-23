@@ -40,7 +40,7 @@ function Tooltip() {
   );
 }
 
-Other Cases Where Synchronous Layout Measurement Is Critical
+Other Cases Where Synchronous Layout Measurement Is Critical. Need to go through this again with live example in youtbue
 
 Tooltip positioning
 Dropdown positioning

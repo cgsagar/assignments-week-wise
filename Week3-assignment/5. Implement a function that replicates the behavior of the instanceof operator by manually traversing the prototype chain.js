@@ -52,4 +52,9 @@ Reached null?
        ↓
 Yes → return false
 
+instanceof traverses an object's prototype chain using Object.getPrototypeOf(), comparing each prototype with the constructor's 
+prototype property. If a match is found it returns true; if the chain reaches null, it returns false.
+
+
+
 

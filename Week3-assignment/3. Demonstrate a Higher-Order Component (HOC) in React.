@@ -93,3 +93,6 @@ function withAuthorization(WrappedComponent){
 
 const protectedDashboard = withAuthorization(AdminDashboard);
 
+Usage:
+<protectedDashboard isAdmin = {false} />
+

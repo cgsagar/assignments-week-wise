@@ -314,3 +314,35 @@ and ensuring compatibility with assistive technologies such as screen readers.
 Common accessibility mistakes in React applications include using non-semantic elements like div instead of buttons, missing image alt text, unlabeled 
 form fields, poor keyboard navigation support, removing focus indicators, relying only on colors to convey information, and not using proper semantic HTML. 
 Following accessibility best practices ensures the application is usable for people with disabilities and assistive technologies.
+
+17. What are ARIA attributes and when should they be used?
+ARIA (Accessible Rich Internet Applications) attributes are special HTML attributes that help screen readers and assistive technologies.
+ARIA attributes are code tags that make web pages easier to use for people with disabilities
+understand UI elements when semantic HTML alone is not sufficient.
+ARIA attributes are special HTML attributes that improve accessibility by providing additional information to screen readers and this will help to reach to blind people
+and assistive technologies
+
+When to Use ARIA Attributes:
+Custom Widgets: Add details to complex elements built with basic tags like div or span (e.g., custom sliders, tabs, or modal windows).
+Dynamic States: Show when things change on the screen, such as a menu opening (aria-expanded="true") or a checkbox being selected (aria-checked="true").
+Live Updates: Tell screen readers about real-time text updates using aria-live.
+Extra Labels: Connect text descriptions to form fields using aria-labelledby or aria-describedby when a visible label is missing.
+
+18. What are Core Web Vitals and why are they important?
+Core Web Vitals are Google's key metrics used to measure a website's user experience and performance.
+They matter because they directly impact user experience and can influence SEO
+There are three main Core Web Vitals:
+1. LCP (Largest Contentful Paint)
+2. INP (Interaction to Next Paint)
+3. CLS (Cumulative Layout Shift)
+They are important because of :
+✅ Improve user experience
+✅ Faster page loads
+✅ Better responsiveness
+✅ More stable UI
+✅ Can impact SEO rankings
+✅ Reduce user frustration and bounce rates
+
+
+
+

@@ -215,3 +215,10 @@ BrowserRouter is the industry standard and preferred choice for 95% of productio
 
 HashRouter is used only in legacy environments requiring backward compatibility with old browsers, or 
 when deploying to static hosting environments where you cannot configure fallback redirects (such as basic GitHub Pages).
+
+
+11. How does React Router decide which component to render?
+React Router reads the current URL, matches it against the routes defined inside Routes, and renders the component associated with the best matching route. 
+It uses the browser URL as the source of truth and updates the UI without reloading the page. It uses the History API to update the URL without a full page refresh.
+
+

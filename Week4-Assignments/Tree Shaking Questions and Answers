@@ -59,4 +59,8 @@ Optimized Bundle
 Tree shaking relies on static analysis, but CommonJS imports are resolved dynamically at runtime, making it difficult for bundlers to determine which code is actually used.
 Bundlers cannot reliably determine which exports will be used, whereas ES Modules use static import/export syntax that can be analyzed during the build process. 
 Since the bundler cannot safely remove unused CommonJS code, it often includes the entire module, reducing tree-shaking effectiveness.
+CommonJS uses require(), which is dynamic. Modules can be loaded conditionally, the module path can be computed at runtime, exports can be modified, and properties 
+can be accessed dynamically (for example, math[fn]). Because the bundler cannot always determine which exports will be used during execution, 
+it must conservatively include more code. 
+That's why tree shaking is much more effective with ES Modules than with CommonJS.
 

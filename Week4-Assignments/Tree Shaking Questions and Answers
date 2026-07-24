@@ -194,6 +194,12 @@ navigate("/dashboard");
 React Router essentially does something similar to:
 window.history.pushState({}, "", "/dashboard");Show more lines
 
+10. Difference between BrowserRouter and HashRouter?
 
+- URL Format and Appearance
+BrowserRouter: Creates clean, standard URLs (e.g., https://example.com). - Uses the browser History API (pushState, replaceState).
+HashRouter: Appends a hash symbol to the URL (e.g., https://example.com). - Uses the URL hash (#) for routing.
 
-
+- Server Configuration and Hosting
+BrowserRouter: Requires your web server to be configured to redirect all requests back to index.html; 
+otherwise, refreshing a nested page results in a 404 Not Found error.

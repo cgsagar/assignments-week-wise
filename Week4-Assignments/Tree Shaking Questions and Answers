@@ -82,6 +82,26 @@ require('./' + moduleName);
 Tree shaking can break when code cannot be statically analyzed, such as with CommonJS require, dynamic imports/access patterns, side effects, namespace imports, 
 and wildcard exports. In these cases, bundlers cannot safely determine unused code and may include more code in the final bundle.
 
+5. What is a bundler and why does React need one?
+A bundler is a tool that analyzes an application's dependency graph and combines source files into optimized bundles for the browser. 
+React needs a bundler because browsers don't understand JSX or modern JavaScript directly. Bundlers handle transpilation, module resolution, tree shaking, 
+code splitting, minification, and asset optimization, resulting in a smaller and faster production build.
+
+Because React needs this:
+✅ Dependency Graph
+App.js
+├── Header.js
+│   └── Logo.js
+└── Footer.js
+
+✅ JSX Transpilation
+✅ Module Resolution - The process of finding the actual file/package for an import statement.
+✅ Tree Shaking
+✅ Code Splitting
+✅ Minification
+✅ Webpack / Vite / Rollup
+
+
 
 
 

@@ -32,3 +32,27 @@ After tree shaking, only the add function is included in the production bundle. 
 - Preserves modules with side effects (e.g., console.log(), global variable modifications) to avoid breaking functionality.
 - Runs dead code elimination and minification (using tools like Terser) to further optimize the bundle.
 - Generates a smaller production bundle, resulting in faster load times and better performance.
+
+What Happens During a React Production Build? - This is important
+npm run build - 
+React Source Code
+        │
+        ▼
+ES Module Analysis
+        │
+        ▼
+Dependency Graph Creation
+        │
+        ▼
+Tree Shaking
+        │
+        ▼
+Dead Code Elimination
+        │
+        ▼
+Minification
+        │
+        ▼
+Optimized Bundle
+``
+

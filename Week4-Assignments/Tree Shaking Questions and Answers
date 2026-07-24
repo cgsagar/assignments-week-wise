@@ -103,6 +103,55 @@ App.js
 ✅ Bundling – Combines files into optimized chunks.
 ✅ Webpack / Vite / Rollup
 
+6. How is Vite different from Webpack in development mode?
+
+Webpack Dev  → Bundle Everything
+Webpack Build → Bundle Everything
+
+Vite Dev    → ESM + esbuild
+Vite Build  → Rollup
+
+Vite Dev  → ESM + esbuild
+Vite Build → Rollup
+
+Webpack bundles first and then serves, while Vite serves first and bundles only for production. 🚀
+1000 Files
+    ↓
+Bundle Everything
+    ↓
+Start Application 
+So startup may take a few seconds for large projects.
+In development mode, Webpack bundles the entire application before serving it, 
+
+whereas Vite leverages native ES Modules and serves source files directly without upfront bundling. 
+This allows Vite to have significantly faster startup times and near-instant Hot Module Replacement, making development faster, especially for large React applications. 
+I won't bundle everything now. I'll start immediately and send files only when the browser asks for them.
+Start Dev Server
+       ↓
+Browser asks for App.jsx
+       ↓
+Vite sends App.jsx
+
+Browser asks for Header.jsx
+       ↓
+Vite sends Header.jsx
+
+Webpack ex:
+File Change Example
+
+I changed Header.jsx
+Header Changed
+      ↓
+Rebuild Bundle
+      ↓
+Update Browser
+
+Vite:
+Header Changed
+      ↓
+Send Only Header.jsx
+      ↓
+Update Browser
 
 
 

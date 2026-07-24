@@ -54,5 +54,6 @@ Minification
         │
         ▼
 Optimized Bundle
-``
+
+3. Why does tree shaking not work well with CommonJS (require)?
 

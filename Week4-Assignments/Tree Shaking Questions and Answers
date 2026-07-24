@@ -153,6 +153,37 @@ Send Only Header.jsx
       ↓
 Update Browser
 
+7. What happens differently in development and production builds?
+Development Build
+
+Source maps enabled for debugging
+Readable/unminified code
+HMR (Hot Module Replacement)
+Detailed error messages
+Minimal optimizations
+
+Production Build
+
+Tree shaking removes unused code
+Minification reduces file size
+Code splitting for better loading
+Asset optimization
+Hashed filenames for caching
+Dead code elimination
+
+In development, you get faster feedback while coding, but the app may run slower and look less like the final deployed version.
+
+In production, the app behaves more like what real users see, with better load times and less extra overhead
+
+8. What is code splitting and how do bundlers enable it?
+Code splitting is the process of breaking an application into smaller bundles that can be loaded on demand. 
+Bundlers such as Webpack and Vite enable this by analyzing the dependency graph and creating separate chunks, often through dynamic imports. 
+This reduces the initial bundle size and improves application loading performance.
+
+Bundlers like Webpack, Rollup, and Vite analyze the dependency graph and create separate chunks.
+Using Dynamic Imports: const Dashboard = React.lazy(() => import('./Dashboard'));
+Bundler generates -> main.js, dashboard.chunk.js
+
 
 
 

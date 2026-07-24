@@ -383,4 +383,35 @@ Split large tasks
 Optimize event handlers
 Use code splitting and lazy loading
 
+20. How can React apps improve Web Vitals?
+Improve LCP (Loading Performance)
+
+✅ Use lazy loading for routes/components (React.lazy)
+✅ Optimize and compress images
+✅ Use modern image formats (WebP, AVIF)
+✅ Reduce bundle size with tree shaking
+✅ Use code splitting
+✅ Load critical content first
+
+Improve INP (Responsiveness)
+
+✅ Avoid heavy JavaScript execution
+✅ Optimize event handlers
+✅ Use memoization (React.memo, useMemo, useCallback) where appropriate
+✅ Split large tasks into smaller ones
+✅ Lazy load heavy components and libraries
+
+Improve CLS (Visual Stability)
+
+✅ Set width and height for images
+✅ Reserve space for ads and dynamic content
+✅ Avoid inserting content above existing content
+✅ Prevent font-related layout shifts
+
+React applications can improve Web Vitals by using code splitting and lazy loading to reduce initial bundle size, 
+optimizing images and assets to improve LCP, reducing unnecessary re-renders and heavy JavaScript execution to improve INP, and reserving space for images 
+and dynamic content to minimize CLS. These optimizations result in faster, more responsive, and visually stable applications.
+
+
+
 

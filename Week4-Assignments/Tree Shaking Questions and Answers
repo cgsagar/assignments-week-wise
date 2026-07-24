@@ -64,3 +64,25 @@ can be accessed dynamically (for example, math[fn]). Because the bundler cannot 
 it must conservatively include more code. 
 That's why tree shaking is much more effective with ES Modules than with CommonJS.
 
+
+4. What coding patterns can break Tree Shaking?
+- CommonJS (require) imports, because they are resolved dynamically at runtime and cannot be statically analyzed.
+
+- Dynamic imports or dynamic property access, such as:
+utils[functionName] - The bundler cannot determine which code is actually used.
+
+- Modules with side effects, such as:
+console.log("Module loaded"); - Bundlers keep these modules to avoid changing application behavior.
+
+- Namespace imports (import *), which can make it harder to eliminate unused code.
+- Wildcard exports (export *) across multiple files, which can complicate dependency analysis.
+-  Dynamic require() statements, such as:
+require('./' + moduleName);
+
+Tree shaking can break when code cannot be statically analyzed, such as with CommonJS require, dynamic imports/access patterns, side effects, namespace imports, 
+and wildcard exports. In these cases, bundlers cannot safely determine unused code and may include more code in the final bundle.
+
+
+
+
+

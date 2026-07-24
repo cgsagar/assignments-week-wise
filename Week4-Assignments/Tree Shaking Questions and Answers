@@ -184,6 +184,15 @@ Bundlers like Webpack, Rollup, and Vite analyze the dependency graph and create 
 Using Dynamic Imports: const Dashboard = React.lazy(() => import('./Dashboard'));
 Bundler generates -> main.js, dashboard.chunk.js
 
+9. How does client-side routing work in React without page reloads?
+React client-side routing works by using React Router and the browser's History API. When a user navigates, React Router intercepts the request, 
+updates the URL without a full page reload, and renders the appropriate component based on the route. This provides a faster and smoother user experience
+
+Behind the scenes, React Router internally calls the browser's History API (pushState/replaceState) for you.
+Understanding:
+navigate("/dashboard");
+React Router essentially does something similar to:
+window.history.pushState({}, "", "/dashboard");Show more lines
 
 
 

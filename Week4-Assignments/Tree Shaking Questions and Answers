@@ -1,4 +1,26 @@
 1. What is tree shaking and why is it important in React applications?
 Tree shaking is a build optimization technique that removes unused or dead code from the final JavaScript bundle. 
 In React applications, bundlers such as Webpack, Rollup, and Vite analyze ES module imports and exclude exports that are never used. 
-This results in smaller bundle sizes, faster download times, quicker JavaScript execution, and improved application performance.
+This results in smaller bundle sizes, faster download times, quicker JavaScript execution, and improved application performance, Improved Lighthouse and Core Web Vitals Scores.
+ Most modern React build tools such as Vite, Rollup, Webpack, Turbopack, and esbuild perform tree shaking during production builds.
+
+Ex:
+// utils.js
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+
+export function multiply(a, b) {
+  return a * b;
+}
+
+React Component:
+import { add } from "./utils";
+console.log(add(2, 3));
+After tree shaking, only the add function is included in the production bundle. The subtract and multiply functions are removed because they are never used.
+
+2. How does tree shaking work internally?

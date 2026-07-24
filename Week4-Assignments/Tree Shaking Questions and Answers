@@ -88,17 +88,19 @@ React needs a bundler because browsers don't understand JSX or modern JavaScript
 code splitting, minification, and asset optimization, resulting in a smaller and faster production build.
 
 Because React needs this:
-✅ Dependency Graph
+
+✅ Module Resolution - The process of finding the actual file/package for an import statement.
+✅ Dependency Graph Creation – Understands relationships between modules.
 App.js
 ├── Header.js
 │   └── Logo.js
 └── Footer.js
-
-✅ JSX Transpilation
-✅ Module Resolution - The process of finding the actual file/package for an import statement.
-✅ Tree Shaking
-✅ Code Splitting
-✅ Minification
+✅ JSX/TypeScript Transpilation – Converts code into browser-compatible JavaScript.
+✅ Tree Shaking – Removes unused code.
+✅ Code Splitting – Loads code only when needed.
+✅ Minification – Reduces JavaScript and CSS size.
+✅ Asset Optimization – Optimizes images, fonts, CSS, and other static assets.
+✅ Bundling – Combines files into optimized chunks.
 ✅ Webpack / Vite / Rollup
 
 

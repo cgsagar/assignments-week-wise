@@ -221,4 +221,26 @@ when deploying to static hosting environments where you cannot configure fallbac
 React Router reads the current URL, matches it against the routes defined inside Routes, and renders the component associated with the best matching route. 
 It uses the browser URL as the source of truth and updates the UI without reloading the page. It uses the History API to update the URL without a full page refresh.
 
+12. What is lazy loading in React and when should it be used?
+Lazy Loading is a technique where components are loaded only when they are needed, instead of loading all components during the initial page load.
+import { lazy, Suspense } from "react";
+
+const Dashboard = lazy(() => import("./Dashboard"));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Dashboard />
+    </Suspense>
+  );
+}
+Here, Dashboard is downloaded only when it's required.
+When it be used?
+✅ Route-Based Splitting: : Pages that a user might not visit during a single session (e.g., an /admin portal, a /settings page, or a /profile view) should be 
+isolated into independent chunks
+✅ Large components that increase bundle size
+✅ Features not immediately needed on initial page load
+✅ Heavy third-party libraries used only in specific sections
+✅ Infrequently accessed pages such as Reports, Analytics, Admin panels
+
 

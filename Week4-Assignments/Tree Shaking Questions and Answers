@@ -24,3 +24,11 @@ console.log(add(2, 3));
 After tree shaking, only the add function is included in the production bundle. The subtract and multiply functions are removed because they are never used.
 
 2. How does tree shaking work internally?
+- Builds a dependency graph of all modules starting from the application's entry point.
+- Analyzes ES Module imports/exports (import/export) using static analysis.
+- Marks all used exports that are reachable from the entry point.
+- Identifies unused exports (dead code) that are never imported or referenced.
+- Removes unused code from the final bundle during the build process.
+- Preserves modules with side effects (e.g., console.log(), global variable modifications) to avoid breaking functionality.
+- Runs dead code elimination and minification (using tools like Terser) to further optimize the bundle.
+- Generates a smaller production bundle, resulting in faster load times and better performance.

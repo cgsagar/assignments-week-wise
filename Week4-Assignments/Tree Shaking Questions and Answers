@@ -56,7 +56,7 @@ Minification
 Optimized Bundle
 
 3. Why does tree shaking not work well with CommonJS (require)?
-Tree shaking doesn't work well with CommonJS because require() is dynamic and resolved at runtime. It requries Static Analysis.
+Tree shaking relies on static analysis, but CommonJS imports are resolved dynamically at runtime, making it difficult for bundlers to determine which code is actually used.
 Bundlers cannot reliably determine which exports will be used, whereas ES Modules use static import/export syntax that can be analyzed during the build process. 
 Since the bundler cannot safely remove unused CommonJS code, it often includes the entire module, reducing tree-shaking effectiveness.
 

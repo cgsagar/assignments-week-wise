@@ -243,4 +243,34 @@ isolated into independent chunks
 ✅ Heavy third-party libraries used only in specific sections
 ✅ Infrequently accessed pages such as Reports, Analytics, Admin panels
 
+13. How does React.lazy() work with bundlers?
+
+React.lazy() uses a dynamic import which loads asynchronously and returns a promise.
+Yes, React.lazy() loads components asynchronously. It uses the dynamic import() function, which returns a Promise. It is downloaded when needed thats why promise.
+The bundler creates a separate chunk for that component, 
+and React downloads it on demand when needed. Suspense is used to display a fallback UI while the component is being loaded.
+
+When the bundler sees:
+const Dashboard = React.lazy(() => import("./Dashboard"));
+it recognizes import() as a code-splitting point.
+
+Instead of putting Dashboard in the main bundle, the bundler creates a separate chunk for it.
+The main bundle is loaded initially.
+When the component is rendered for the first time, React requests that chunk from the server and loads it.
+React.lazy()
+      ↓
+Dynamic import()
+      ↓
+Bundler creates separate chunk
+      ↓
+Initial load → main bundle only
+      ↓
+User navigates to Dashboard
+      ↓
+dashboard.chunk.js downloaded
+      ↓
+Component rendered
+
+14. What is Suspense and why is it required?
+
 

@@ -203,3 +203,15 @@ HashRouter: Appends a hash symbol to the URL (e.g., https://example.com). - Uses
 - Server Configuration and Hosting
 BrowserRouter: Requires your web server to be configured to redirect all requests back to index.html; 
 otherwise, refreshing a nested page results in a 404 Not Found error.
+HashRouter: Requires no special server setup because the server ignores everything after the # symbol, making it ideal for simple static file hosts.
+
+- SEO
+BrowserRouter: Fully SEO-friendly because search engine web crawlers easily read standard paths
+HashRouter: Poor for SEO because search engines struggle to index content hidden behind hash fragments properly
+
+Which one to use?
+BrowserRouter is the industry standard and preferred choice for 95% of production web applications hosted on modern platforms 
+(like Vercel, Netlify, or custom Node/Nginx servers) where you control server routing rules
+
+HashRouter is used only in legacy environments requiring backward compatibility with old browsers, or 
+when deploying to static hosting environments where you cannot configure fallback redirects (such as basic GitHub Pages).

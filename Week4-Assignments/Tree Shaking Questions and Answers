@@ -272,5 +272,45 @@ dashboard.chunk.js downloaded
 Component rendered
 
 14. What is Suspense and why is it required?
+Suspense is a React component that lets you display a fallback UI (loading indicator) while React is waiting for something to load, such as a lazily loaded component.
+Suspense is a React component used to handle asynchronous component loading. It displays a fallback UI while React waits for a lazily loaded component or 
+other asynchronous resource to become available. 
+
+It is required with React.lazy() because lazy-loaded components are loaded asynchronously and need a placeholder UI during the loading period.
 
 
+const Dashboard = React.lazy(() => import("./Dashboard"));
+
+<Suspense fallback={<div>Loading...</div>}>
+  <Dashboard />
+</Suspense>
+
+React.lazy() loads components asynchronously.
+<Dashboard />
+the component code may not have been downloaded yet.
+Render Dashboard
+       ↓
+Chunk not downloaded
+       ↓
+Wait...
+Without Suspense, React wouldn't know what to show while waiting.
+Suspense provides a temporary UI:
+Render Dashboard
+       ↓
+Chunk loading...
+       ↓
+Show Loading...
+       ↓
+Chunk downloaded
+       ↓
+Render Dashboard
+
+15. What does accessibility mean in web applications?
+Accessibility (a11y) is the practice of building web applications that can be used by everyone, including people with disabilities. 
+It involves using semantic HTML, keyboard navigation, proper labels, ARIA attributes when necessary, 
+and ensuring compatibility with assistive technologies such as screen readers.
+
+16. Common accessibility mistakes in React apps?
+Common accessibility mistakes in React applications include using non-semantic elements like div instead of buttons, missing image alt text, unlabeled 
+form fields, poor keyboard navigation support, removing focus indicators, relying only on colors to convey information, and not using proper semantic HTML. 
+Following accessibility best practices ensures the application is usable for people with disabilities and assistive technologies.

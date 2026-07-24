@@ -332,9 +332,9 @@ Extra Labels: Connect text descriptions to form fields using aria-labelledby or 
 Core Web Vitals are Google's key metrics used to measure a website's user experience and performance.
 They matter because they directly impact user experience and can influence SEO
 There are three main Core Web Vitals:
-1. LCP (Largest Contentful Paint)
-2. INP (Interaction to Next Paint)
-3. CLS (Cumulative Layout Shift)
+1. LCP (Largest Contentful Paint) - Loading Speed
+2. INP (Interaction to Next Paint) - Interaction Speed 
+3. CLS (Cumulative Layout Shift) -  Layout Stability
 They are important because of :
 ✅ Improve user experience
 ✅ Faster page loads
@@ -343,6 +343,15 @@ They are important because of :
 ✅ Can impact SEO rankings
 ✅ Reduce user frustration and bounce rates
 
-
+19. Explain LCP, CLS, and FID/INP with examples
+1. LCP (Largest Contentful Paint)
+What it measures:
+Loading performance.
+Time taken for the largest visible element on the page to render.
+Examples of LCP elements:
+Hero image
+Large banner
+Main heading
+Featured content block
 
 

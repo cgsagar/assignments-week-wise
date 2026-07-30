@@ -26,7 +26,8 @@ console.log(countDistinctSubsequences("gfg")); // 7
 console.log(countDistinctSubsequences("ggg")); // 4
 
 
-//Approach 2 - Brute force
+//Approach 2 - Brute force - Time Complexity  : O(2^n) and Space Complexity : O(2^n)
+
 
 function countDistinctSubsequences(str) {
     const set = new Set();

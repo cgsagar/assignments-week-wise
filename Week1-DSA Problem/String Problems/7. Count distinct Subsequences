@@ -24,3 +24,32 @@ function countDistinctSubsequences(str) {
 
 console.log(countDistinctSubsequences("gfg")); // 7
 console.log(countDistinctSubsequences("ggg")); // 4
+
+
+//Approach 2 - Brute force
+
+function countDistinctSubsequences(str) {
+    const set = new Set();
+
+    function generate(index, current) {
+
+        // Base case
+        if (index === str.length) {
+            set.add(current);
+            return;
+        }
+
+        // Take current character
+        generate(index + 1, current + str[index]);
+
+        // Skip current character
+        generate(index + 1, current);
+    }
+
+    generate(0, "");
+
+    return set.size;
+}
+
+console.log(countDistinctSubsequences("gfg")); // 7
+console.log(countDistinctSubsequences("ggg")); // 4

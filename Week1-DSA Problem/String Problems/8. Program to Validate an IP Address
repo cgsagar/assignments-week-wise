@@ -46,3 +46,33 @@ console.log(isValidIPv4("0.0.0.0"));          // true
 console.log(isValidIPv4("256.10.20.30"));     // false
 console.log(isValidIPv4("192.168.01.1"));     // false
 console.log(isValidIPv4("1.1.1"));            // false
+
+
+
+//IPV6 Address Approach - Time complexity is O(n) and O(1)
+function isValidIPv6(ip) {
+    const parts = ip.split(":");
+
+    if (parts.length !== 8) {
+        return false;
+    }
+
+    for (let part of parts) {
+
+        if (part.length === 0 || part.length > 4) {
+            return false;
+        }
+
+        for (let ch of part) {
+            const isDigit = ch >= '0' && ch <= '9';
+            const isLower = ch >= 'a' && ch <= 'f';
+            const isUpper = ch >= 'A' && ch <= 'F';
+
+            if (!isDigit && !isLower && !isUpper) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}

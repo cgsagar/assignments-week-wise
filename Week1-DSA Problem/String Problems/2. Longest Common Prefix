@@ -6,6 +6,9 @@
 5. After processing all strings,
    the remaining prefix is the answer.
 
+Time Complexity = O(N × M) and Space Complexity = O(1) and this is horizonal scaling approach.
+
+
 function longestCommonPrefix(arr) {
     if (arr.length === 0) return "";
 

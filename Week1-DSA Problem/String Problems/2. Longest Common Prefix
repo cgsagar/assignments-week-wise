@@ -1,1 +1,25 @@
+1. Assume first string is the longest common prefix.
+2. Compare it with every other string.
+3. If current string doesn't start with the prefix,
+   remove the last character from prefix.
+4. Repeat until it matches.
+5. After processing all strings,
+   the remaining prefix is the answer.
 
+function longestCommonPrefix(arr) {
+    if (arr.length === 0) return "";
+
+    let prefix = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        while (!arr[i].startsWith(prefix)) {
+            prefix = prefix.slice(0, -1);
+
+            if (prefix === "") {
+                return "";
+            }
+        }
+    }
+
+    return prefix;
+}

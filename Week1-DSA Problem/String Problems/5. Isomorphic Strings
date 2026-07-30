@@ -1,5 +1,5 @@
 
-//Approach 1 - Time Complexity  : O(n)2Space Complexity : O(n) - Hashing
+//Approach 1 - Time Complexity  : O(n) Space Complexity : O(n) - Hashing
 function isIsomorphic(s1, s2) {
     if (s1.length !== s2.length) return false;
 
@@ -28,7 +28,7 @@ function isIsomorphic(s1, s2) {
 console.log(isIsomorphic("aab", "xxy")); // true
 
 
-//Approach 2 - Brute Force approach
+//Approach 2 - Brute Force approach - Time Complexity  : O(n2)  Space Complexity : O(1) - Hashing
 
 function isIsomorphic(s1, s2) {
     if (s1.length !== s2.length) return false;
